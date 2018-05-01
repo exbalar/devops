@@ -1,0 +1,42 @@
+Oracle 11G installation and schema creation
+------------------------------------------
+
+select * from dba_tablespaces;
+
+create tablespace bala_tablespace
+    datafile 'bala_tablespace.dat'
+    size 10M autoextend on;
+    
+    
+create temporary tablespace bala_tablespace_temp
+ tempfile 'bala_tablespace_temp.dat'
+  size 5M autoextend on;
+  
+  
+      
+create user hibernate_db
+    identified by password
+  default tablespace bala_tablespace
+    temporary tablespace bala_tablespace_temp;
+    
+    grant create session to hibernate_db;
+    grant create table to hibernate_db;
+    grant create sequence to hibernate_db;
+    grant unlimited tablespace to hibernate_db;
+	
+	
+	select * from session_privs;
+select * from EMPLOYEE;
+ drop TABLE employee;
+create table EMPLOYEE (id int PRIMARY KEY,
+FIRSTNAME  VARCHAR2(20),
+LASTNAME VARCHAR2(20), 
+EMAIL VARCHAR2(20), 
+TELEPHONE VARCHAR2(20));
+
+CREATE SEQUENCE employee_seq
+  MINVALUE 1
+  MAXVALUE 999999999999999999999999999
+  START WITH 1
+  INCREMENT BY 1
+  CACHE 20;
