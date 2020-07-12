@@ -1,0 +1,11 @@
+
+vi /etc/sysconfig/network-scripts/ifcfg-<interfacename>
+
+#add below
+IPADDR=192.168.122.66
+PREFIX=24
+GATEWAY=192.168.122.1
+DNS1=192.168.122.1
+BOOTPROTO="none"
+
+#sudo nmcli connection down enp1s0 && sudo nmcli connection up enp1s0
