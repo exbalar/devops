@@ -1,3 +1,11 @@
+change hostname :
+----------------
+sudo vi /etc/hostname
+sudo vi /etc/hosts
+
+
+change ip:
+----------
 
 vi /etc/sysconfig/network-scripts/ifcfg-<interfacename>
 
